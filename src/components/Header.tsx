@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import SearchModal from "./SearchModal";
 
 const Header = () => {
@@ -46,14 +47,17 @@ const Header = () => {
               </Link>
             </nav>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsSearchOpen(true)}
-              className="hover:bg-primary/10"
-            >
-              <Search className="h-5 w-5" />
-            </Button>
+            <div className="flex items-center space-x-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsSearchOpen(true)}
+                className="hover:bg-primary/10"
+              >
+                <Search className="h-5 w-5" />
+              </Button>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </header>
